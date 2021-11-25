@@ -1,0 +1,28 @@
+{
+  "root": "apps/brandon-miller-io-e2e",
+  "sourceRoot": "apps/brandon-miller-io-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/brandon-miller-io-e2e/cypress.json",
+        "devServerTarget": "brandon-miller-io:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "brandon-miller-io:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/brandon-miller-io-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["brandon-miller-io"]
+}

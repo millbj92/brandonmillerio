@@ -1,0 +1,54 @@
+{
+  "root": "apps/brandon-miller-io",
+  "sourceRoot": "apps/brandon-miller-io",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/next:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "root": "apps/brandon-miller-io",
+        "outputPath": "dist/apps/brandon-miller-io"
+      },
+      "configurations": {
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/next:server",
+      "options": {
+        "buildTarget": "brandon-miller-io:build",
+        "dev": true
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "brandon-miller-io:build:production",
+          "dev": false
+        }
+      }
+    },
+    "export": {
+      "executor": "@nrwl/next:export",
+      "options": {
+        "buildTarget": "brandon-miller-io:build:production"
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/brandon-miller-io"],
+      "options": {
+        "jestConfig": "apps/brandon-miller-io/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/brandon-miller-io/**/*.{ts,tsx,js,jsx}"]
+      }
+    }
+  },
+  "tags": []
+}

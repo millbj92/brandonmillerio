@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "brandon-miller-io": "apps/brandon-miller-io",
+    "brandon-miller-io-e2e": "apps/brandon-miller-io-e2e"
+  }
+}
