@@ -1,6 +1,7 @@
 {
   "version": 2,
   "projects": {
+    "api": "apps/api",
     "brandon-miller-io": "apps/brandon-miller-io",
     "brandon-miller-io-e2e": "apps/brandon-miller-io-e2e"
   }
